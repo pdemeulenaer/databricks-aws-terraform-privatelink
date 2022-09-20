@@ -37,8 +37,8 @@ variable "vpce_subnet_cidr" {
 
 variable "private_dns_enabled" {
   default = true
-
 }
+
 variable "tags" { default = {} }
 
 variable "cidr_block" {
