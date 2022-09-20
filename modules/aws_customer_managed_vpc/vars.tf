@@ -21,6 +21,7 @@ variable "workspace_vpce_service" {
   For example, for us-east-1 the service is available on the Databricks Private Link [documentation](https://docs.databricks.com/administration-guide/cloud-configurations/aws/privatelink.html#create-the-aws-vpc-endpoints-for-your-aws-region)
   `com.amazonaws.vpce.us-east-1.vpce-svc-09143d1e626de2f04`
   DESC
+  default = "com.amazonaws.vpce.eu-central-1.vpce-svc-081f78503812597f7" # For Frankfurt region
 }
 variable "relay_vpce_service" {
   description = <<DESC
@@ -28,6 +29,7 @@ variable "relay_vpce_service" {
   For example, for us-east-1 the service is available on the Databricks Private Link [documentation](https://docs.databricks.com/administration-guide/cloud-configurations/aws/privatelink.html#create-the-aws-vpc-endpoints-for-your-aws-region)
   `com.amazonaws.vpce.us-east-1.vpce-svc-09143d1e626de2f04`
   DESC
+  default = "com.amazonaws.vpce.eu-central-1.vpce-svc-08e5dfca9572c85c4" # For Frankfurt region
 }
 variable "vpce_subnet_cidr" {
   description = "CIDR for deployment of the VPC endpoint subnets"
