@@ -12,6 +12,7 @@ variable "databricks_account_password" {
 }
 variable "region" {
   description = "region in which all AWS resources are deployed"
+  default = "eu-central-1"
 }
 
 variable "workspace_vpce_service" {
