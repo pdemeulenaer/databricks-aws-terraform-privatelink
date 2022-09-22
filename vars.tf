@@ -42,7 +42,7 @@ variable "private_dns_enabled" {
 variable "tags" { default = {} }
 
 variable "cidr_block" {
-  default = "10.4.0.0/16"
+  default = "10.0.0.0/16"
 }
 
 variable "vpc_id" {
