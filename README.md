@@ -9,6 +9,8 @@ This repo will closely follow https://github.com/databricks/terraform-databricks
 
 * TODO: in the Terraform link above, there is the list of required variables. Some of them point to components (like vpc_id, subnet_ids,...) that should *already* exist by the time of the terraform apply. That is a bit odd. Could we provision everything in one shot? We could start by manually creating them (or generating them using the Standard template) and just link them in the vars.tf. Then, second step would be to provision them too in one shot.
 
+* TODO: add tags
+
 Commands to run:
 
 terraform init
