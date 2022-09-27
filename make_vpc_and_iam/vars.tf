@@ -22,5 +22,6 @@ resource "random_string" "naming" {
 }
 
 locals {
-  prefix = "demo-${random_string.naming.result}"
+  # prefix = "demo-${random_string.naming.result}"
+  prefix = "vpc-creation"
 }

@@ -14,11 +14,11 @@ module "vpc" {
   tags = var.tags
 
   enable_dns_hostnames = true
-  enable_nat_gateway   = true
-  single_nat_gateway   = true
-  create_igw           = true
+  enable_nat_gateway   = false
+  single_nat_gateway   = false
+  create_igw           = false
 
-  public_subnets  = [cidrsubnet(var.cidr_block, 3, 0)]
+  # public_subnets  = [cidrsubnet(var.cidr_block, 3, 0)]
   private_subnets = [cidrsubnet(var.cidr_block, 3, 1),
                      cidrsubnet(var.cidr_block, 3, 2)]
 
@@ -48,9 +48,11 @@ module "vpc_endpoints" {
     s3 = {
       service         = "s3"
       service_type    = "Gateway"
+      # route_table_ids = flatten([
+      #   module.vpc.private_route_table_ids,
+      #   module.vpc.public_route_table_ids])
       route_table_ids = flatten([
-        module.vpc.private_route_table_ids,
-        module.vpc.public_route_table_ids])
+        module.vpc.private_route_table_ids])
       tags            = {
         Name = "${local.prefix}-s3-vpc-endpoint"
       }
