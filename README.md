@@ -6,6 +6,14 @@ Instead of following the standard Databricks Terraform template, which provision
 
 This repo will closely follow https://github.com/databricks/terraform-databricks-lakehouse-blueprints/tree/main/examples/test_aws_customer_managed_vpc and therein. 
 
+## Prerequisites
+
+- An existing Databricks account, specifically for the AWS cloud: see https://docs.databricks.com/getting-started/account-setup.html to register such account
+
+- An existing VPC within your AWS account. To create and configure it properly, see
+
+- An existing cross-account IAM rule: a cross account IAM role allows the Databricks "Control Plane" (located in a Databricks AWS account) to create spark clusters within your "Data Plane", i.e. within your managed VPC. See https://docs.databricks.com/administration-guide/account-api/iam-role.html#create-a-cross-account-role on how to create such a rule from the console
+
 ## Inputs
 
 The inputs are to be defined in a file.tfvars as some are secrets
