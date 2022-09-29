@@ -6,12 +6,37 @@ Instead of following the standard Databricks Terraform template, which provision
 
 This repo will closely follow https://github.com/databricks/terraform-databricks-lakehouse-blueprints/tree/main/examples/test_aws_customer_managed_vpc and therein. 
 
+## Inputs
+
+The inputs are to be defined in a file.tfvars as some are secrets
+
+- databricks_account_username
+
+- databricks_account_password
+
+- databricks_account_id
+
+- cross_account_arn
+
+- vpce_subnet_cidr
+
+- vpc_id
+
+- subnet_ids = ["private-subnet-1-id", "private-subnet-2-id"] (should be in such list format)
+
+- security_group_id
+
+## Outputs
+
+## task list
 
 * TODO: in the Terraform link above, there is the list of required variables. Some of them point to components (like vpc_id, subnet_ids,...) that should *already* exist by the time of the terraform apply. That is a bit odd. Could we provision everything in one shot? We could start by manually creating them (or generating them using the Standard template) and just link them in the vars.tf. Then, second step would be to provision them too in one shot.
 
 * TODO: add tags
 
-Commands to run:
+* figure out how the frontend VPC endpoint is created. Only the backend VPC endpoint are explicitely defined here
+
+## Commands to run
 
 terraform init
 terraform plan -var-file="tutorial.tfvars"
