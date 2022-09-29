@@ -8,11 +8,11 @@ This repo will closely follow https://github.com/databricks/terraform-databricks
 
 ## Prerequisites
 
-- An existing Databricks account, specifically for the AWS cloud: see https://docs.databricks.com/getting-started/account-setup.html to register such account
+- An existing Databricks account, specifically for the AWS cloud: [see here to register such account](https://docs.databricks.com/getting-started/account-setup.html)
 
-- An existing VPC within your AWS account. To create and configure it properly, see
+- An existing VPC within your AWS account. To create and configure it properly, [see here](https://docs.databricks.com/administration-guide/cloud-configurations/aws/customer-managed-vpc.html)
 
-- An existing cross-account IAM rule: a cross account IAM role allows the Databricks "Control Plane" (located in a Databricks AWS account) to create spark clusters within your "Data Plane", i.e. within your managed VPC. See https://docs.databricks.com/administration-guide/account-api/iam-role.html#create-a-cross-account-role on how to create such a rule from the console
+- An existing cross-account IAM rule: a cross account IAM role allows the Databricks "Control Plane" (located in a Databricks AWS account) to create spark clusters within your "Data Plane", i.e. within your managed VPC. [See here on how to create such a rule from the console](https://docs.databricks.com/administration-guide/account-api/iam-role.html#create-a-cross-account-role)
 
 ## Inputs
 
